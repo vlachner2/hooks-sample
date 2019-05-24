@@ -1,11 +1,21 @@
 import { createContext } from "react";
 
-export const initialState = { seLaCome: false };
+export const initialState = { user: { name: '', lastName: '', company: '' } };
 
-export const reducer = (state, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'seLaComeType':
-      return { seLaCome: !state.seLaCome };
+    case 'signIn':
+      return {
+        ...state,
+        user: {
+          name: action.userInfo.name,
+          lastName: action.userInfo.lastName,
+          company: action.userInfo.company,
+        }
+      }
+    case 'signOut':
+      state = initialState;
+      break;
     default:
       return state;
   }
