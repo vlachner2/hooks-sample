@@ -1,6 +1,12 @@
 import { createContext } from "react";
 
-export const initialState = { user: { name: '', lastName: '', company: '' } };
+export const initialState = { 
+  user: { 
+    name: '', 
+    lastName: '', 
+    company: '' 
+  } 
+};
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -8,9 +14,9 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: {
-          name: action.userInfo.name,
-          lastName: action.userInfo.lastName,
-          company: action.userInfo.company,
+          name: action.user.name,
+          lastName: action.user.lastName,
+          company: action.user.company,
         }
       }
     case 'signOut':

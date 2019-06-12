@@ -7,7 +7,13 @@ export default () => {
   const { dispatch } = useContext(Context);
 
   const signIn = () => {
-    dispatch({ type: "signIn", userInfo: { name: 'Ferro', lastName: 'Alvarez', company: 'Pernix' }})
+    dispatch({ type: "signIn", 
+      user: { 
+        name: 'Ferro',
+        lastName: 'Alvarez',
+        company: 'Pernix' 
+      }
+    })
   }
 
   return (
